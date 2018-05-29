@@ -8,9 +8,36 @@ require 'includes/form_handlers/login_handler.php';
 <html>
 <head>
     <title>Welcome to Swirlfeed!</title>
+    <Link rel="stylesheet" type="text/css" href="assets/css/register_style.css"></Link>
+    <!-- jquery link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="assets/js/register.js"></script>
 </head>
-
 <body>
+
+    <?php 
+
+    if(isset($_POST['register_button'])){
+        echo '
+        <script>
+        
+        $(document).ready(function() {
+            $("#first").hide();
+            $("#second").show();
+        });
+        
+        </script>
+        ';
+    }
+    ?>
+    <div class="wrapper">
+    
+    <div class="login_box"> 
+    <div class="login_header">
+        <h1>Swirlfeed!</h1>
+        login or sign up below!
+    </div>
+    <div id="first">
     <form action = "register.php"  method="POST">
         <input type="email" name = "log_email" placeholder="Email Address" value="<?php 
             if(isset($_SESSION['log_email'])) {
@@ -20,14 +47,16 @@ require 'includes/form_handlers/login_handler.php';
         <br>
         <input type="password" name = "log_password" placeholder="Password" required>
         <br>
+        <?php if(in_array("Email or password was incorrect<br>", $error_array)) echo "Email or password was incorrect<br>"; ?>
         <input type="submit" name = "login_button" placeholder="Login">
         <br>
-        <?php 
-            if(in_array("Email or password was incorrect<br>", $error_array)) echo "Email or password was incorrect<br>"; ?>
+        <a href="#" id="signup" class="signup">Need an account? Register here.</a>
+
     </form>
+    </div>
 
     
-    
+    <div id="second">
     <form action="register.php" method ="Post">
         <input type="text" name="reg_fname" placeholder="First Name" value ="<?php 
         if(isset($_SESSION['reg_fname'])){
@@ -80,8 +109,11 @@ require 'includes/form_handlers/login_handler.php';
         <input type="submit" name="register_button" value="Register">
         <br>
         <?php if(in_array("<span style='color: #14C800;'>You're all set! Go ahead and log in!</span><br>", $error_array)) echo "<span style='color: #14C800;'>You're all set! Go ahead and log in!</span><br>"; ?>
-
+        <a href="#" id="sign_in" class="sign_in">Already have an account? Sign in here.</a>
 
     </form>
+    </div>
+    </div>
+    </div>
 </body>
 </html>

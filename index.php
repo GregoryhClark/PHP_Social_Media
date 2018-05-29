@@ -1,12 +1,7 @@
-<?php 
-require 'config/config.php';
-
+<?php
+include("includes/header.php");
+// session_destroy();
 ?>
-<html>
-<head>  
-    <title>SwirlFeed</title>
-</head>
-<body>
         Hello Greg!
 </body>
 </html>
