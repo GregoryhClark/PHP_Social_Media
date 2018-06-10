@@ -32,7 +32,7 @@ else {
         </div>
 
         <nav>
-        <a href="#">
+        <a href="<?php echo $userLoggedIn ?>">
                 <?php
                     echo $user['first_name'];
                 ?>
@@ -51,6 +51,9 @@ else {
             </a>
             <a href="#">
                 <i class="fas fa-cog"></i>
+            </a>
+            <a href="includes/handlers/logout.php">
+                <i class="fas fa-sign-out-alt"></i>
             </a>
         </nav>
     </div>

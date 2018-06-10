@@ -8,8 +8,7 @@
 }
 body{
     line-height: 17px;
-    /* background-color: #E6EAE8; */
-    background-color: black;
+    background-color: #E6EAE8;
 }
 .top_bar{
     width:100%;
@@ -49,13 +48,13 @@ nav a{
     font-size:17px;
 
 }
-/* nav a:hover{
+nav a:hover{
     border-bottom: 7px solid #e67e22;
     color:#fff;
-} */
+}
 
 .wrapper{
-    margin: atuo;
+    margin: 0 atuo;
     top: 50px;
     position: relative;
     padding: 0 10px;
@@ -74,4 +73,63 @@ nav a{
     width:250px;
     float: left;
     margin-bottom: 20px;
+}
+.user_details_left_right{
+    width: 125px;
+    display: inline-block;
+    position: absolute;
+}
+.user_details img{
+    height: 125px;
+    border-radius: 5px;
+    margin-right:5px;
+}
+.main_column {
+    float: right;
+    width: 70%;
+    z-index: -1;
+    min-height: 160px;
+}
+.post_form{
+    width:100%;
+}
+.post_form textarea{
+    width:80%;
+    height:60px;
+    border-radius: 5px;
+    margin-right: 5px;
+    border: 1px solid #D3D3D3;
+    font-size: 12px;
+    padding:5px;
+}
+.post_form input[type="submit"] {
+    width:10%;
+    height:60px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    font-family:'Bellota-BoldItalic', sans-serif;
+    color:#fff;
+    text-shadow: #7386E2;
+    font-size: 120%;
+    position: absolute;
+    outline: 0;
+    margin: 0;
+}
+.post_form input[type="submit"]:active{
+    padding: 5px 4px 4px 5px;
+}
+
+.status_post {
+    width: 96%;
+    font-size: 15px;
+    padding:0px 5px;
+    min-height: 75px;
+}
+.post_profile_pic{
+    float:left;
+    margin-right: 7px;
+}
+.post_profile_pic img {
+    border-radius: 15px;
 }
